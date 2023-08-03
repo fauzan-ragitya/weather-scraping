@@ -5,9 +5,7 @@ def list_all_station(webscraper:WeatherScraper):
     function to return list of all stations
     '''
     txt_station_element = webscraper.get_element('id','cityname')
-    # webscraper.change_text(dropdown_station,'Ang Mo Kio')
     station_parent_element = webscraper.get_next_element('parent',txt_station_element)[0]
-    # print(station_parent_element.get_attribute('outerHTML'))
     dropdown_station_class = webscraper.get_next_element('child',station_parent_element)[1]
     list_of_station_element = webscraper.get_next_element('child',dropdown_station_class)
     result = []
