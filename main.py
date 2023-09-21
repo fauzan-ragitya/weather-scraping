@@ -47,6 +47,7 @@ if __name__=='__main__':
         print(f'Downloading from: {csv_download_url}')
         if csv_download_url:
             response = requests.get(csv_download_url)
+            time.sleep(2)
             string_response = response.text
             splitted_resp = string_response.split('\n')
             if len(all_data)==0:
